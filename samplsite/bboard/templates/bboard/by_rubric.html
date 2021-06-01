@@ -1,14 +1,10 @@
 {% extends 'layout/basic.html' %}
-<title>Главная :: Доска объявлений</title>
+{% block title %}{{ current_rubric.name }}{% endblock %}
 
 {% block content %}
-
-
     {% for i in bbs %}
         <h2>{{ i.title }}</h2>
         <p>{{ i.content }}</p>
         <p>{{ i.published|date:"d.m.Y H:i:s" }}</p>
     {% endfor %}
 {% endblock %}
-
-
